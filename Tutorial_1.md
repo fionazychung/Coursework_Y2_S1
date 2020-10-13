@@ -46,3 +46,4 @@ public class RotateBlock : MonoBehaviour
 }
 ```
 
+After writing the script, go back into Unity and attach the script to the cube/block. Make sure there is a collider attached to the block and add the tag `MyBlock`. 
