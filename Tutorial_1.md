@@ -11,8 +11,8 @@ using UnityEngine;
 
 public class RotateBlock : MonoBehaviour
 {
-
-    Collider coll; 
+    
+    private Collider coll; 
 
     // Start is called before the first frame update
     void Start()
@@ -23,22 +23,22 @@ public class RotateBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    #When the mousebutton is pressed, then the object will rotate by 90 degrees.
+    // When the mousebutton is pressed, then the object will rotate by 90 degrees.
         if (Input.GetMouseButtonDown(0))
         {
-    #Starting point of the ray is from the camera.
+    // Starting point of the ray is from the camera and heads towards the mouse position.
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             
-    #Checking if the collider was hit and where
-    #ray = starting point, out hit = was raycast hit?, 100.0f = length of ray
-            if (coll.Raycast(ray, out hit, 100.0f))
+    // Checking if the collider was hit and where
+    // ray = starting point, out hit = was raycast hit?, 100f = length of ray
+            if (coll.Raycast(ray, out hit, 100f))
             {
-    #Checking that the object that was hit has the correct collider tag.
+    // Checking that the object that was hit has the correct collider tag.
                 if(hit.collider.tag == "MyBlock")
                 {
-    #Rotate on the Z axis by 90 degrees.
-                    transform.Rotate(Vector3.back, 90.0f);
+    // Rotate on the Z axis by 90 degrees.
+                    transform.Rotate(Vector3.back, 90f);
                 }
             }
         }
