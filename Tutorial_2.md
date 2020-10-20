@@ -14,10 +14,15 @@ Counter = Counter + 1;
 transform.rotation = Quaternion.Euler(0.0f, 0.0f, 90.0f * Counter);
 ```
 How the counter works:
+
 0 * 90 = 0
+
 1 * 90 = 90
+
 2 * 90 = 180
+
 3 * 90 = 270
+
 By using the counter in this way, the degrees values are converted into integers that do not have decimal points. This gets rid of the possible error when using euler angles, for example when the rotation is not exactly 90 degrees. 
 
 Inside of `if (Input.GetMouseButtonDown(0))` add:
