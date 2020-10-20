@@ -1,4 +1,4 @@
-# Rotate a Clicked Object by 90 Degrees
+# Tutorial 1: Rotate a Clicked Object by 90 Degrees
 
 Open up a 3D project in Unity and set the rotation in the project so that the scene view is the same as the game view. Create a cube with a scale where X is 2, Y is 4 and Z is 1.
 Create a script called `RotateBlock` . 
@@ -46,4 +46,4 @@ public class RotateBlock : MonoBehaviour
 }
 ```
 
-After writing the script, go back into Unity and attach the script to the cube/block. Make sure there is a collider attached to the block and add the tag `MyBlock`. 
+After writing the script, go back into Unity and attach the script to the cube/block. Make sure there is a collider attached to the block. Then create the tag `MyBlock` in the inspector and add the tag to the block. 
