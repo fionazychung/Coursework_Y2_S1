@@ -34,7 +34,7 @@ Inside of `if (Input.GetMouseButtonDown(0))` add:
 ```
 This sets the counter back to 0 once it reaches 4.
 
-To view the counter:
+To view the counter during play in Unity:
 
 Add 
 ```
