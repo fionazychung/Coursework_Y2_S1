@@ -35,7 +35,8 @@ Inside of `if (Input.GetMouseButtonDown(0))` add:
 This sets the counter back to 0 once it reaches 4.
 
 To view the counter:
-Add to `if (coll.Raycast(ray, out hit, 100.0f))`
+Add 
 ```
 Debug.Log(Counter);
 ```
+to `if (coll.Raycast(ray, out hit, 100.0f))`.
