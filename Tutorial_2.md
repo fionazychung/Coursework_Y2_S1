@@ -1,4 +1,4 @@
-# Tutorial 2: Creating a Counter for the Rotation of the Block
+# Tutorial 2: Creating a Counter for the Rotation of a Block
 
 This tutorial builds on the script and Unity project created in tutorial 1.
 
