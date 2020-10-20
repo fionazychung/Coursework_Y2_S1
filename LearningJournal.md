@@ -34,5 +34,35 @@ public class RotateBlock : MonoBehaviour
 }
 ```
 
+## 20/10/2020
+I first tried to figure out how to create a counter by myself. For this I created a separate if statement. This did not work and was more lines of code than needed.
 
+First attempt:
+```
+RotationCounter();
+   private void RotationCounter()
+    {
+        if (MyBlock.transform.eulerAngles.z == 90)
+        {
+            Counter = 1;
+            Debug.Log("Counter = 1");
+        }
+
+    }
+```
+Solution:
+Change in raycast if statement to
+```
+if (hit.collider.tag == "MyBlock")
+                {
+                    Counter = Counter + 1;
+                    transform.rotation = Quaternion.Euler(0.0f, 0.0f, 90.0f * Counter);
+                }
+                Debug.Log(Counter);
+            }
+            if (Counter > 3)
+            {
+                Counter = 0;
+            }
+```
 
