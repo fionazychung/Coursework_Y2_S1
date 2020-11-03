@@ -71,3 +71,26 @@ I tried to make a point and click character movement for my 3D game using the `N
 
 ## 3/11/2020
 I am trying to randomize the rotation at the start of whent he blocks are set up. I had to change my script around and I thought that was the issue, but it still doesn't work. The randomization of the counter works, but changing the counter does not change the rotation at the start. 
+Solution: I realized I made a small mistake of not putting the transform.rotation line fully outside of the if statements. After changing this, the rotation works. 
+Inside of update:
+```
+if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (coll.Raycast(ray, out hit, 100.0f))
+            {
+                if (hit.collider.tag == "MyBlock")
+                {
+                    Counter = Counter + 1;
+                    if (Counter > 3)
+                    {
+                        Counter = 0;
+                    }
+                }
+                 Debug.Log(Counter);
+            }
+        }
+        transform.rotation = Quaternion.Euler(0.0f, 0.0f, 90.0f * Counter);
+```
+
