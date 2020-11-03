@@ -69,3 +69,5 @@ if (hit.collider.tag == "MyBlock")
 ## 30/10/2020
 I tried to make a point and click character movement for my 3D game using the `NavMesh` function, but I don't know why I can't bake the areas of the ground. I need to bake the areas of the ground that the can be clicked and walked on, but this is not working. I think everything should work once the areas of the ground are baked. 
 
+## 3/11/2020
+I am trying to randomize the rotation at the start of whent he blocks are set up. I had to change my script around and I thought that was the issue, but it still doesn't work. The randomization of the counter works, but changing the counter does not change the rotation at the start. 
