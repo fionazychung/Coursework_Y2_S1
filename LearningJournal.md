@@ -68,7 +68,7 @@ if (hit.collider.tag == "MyBlock")
 
 ## 30/10/2020
 I tried to make a point and click character movement for my 3D game using the `NavMesh` function, but I don't know why I can't bake the areas of the ground. I need to bake the areas of the ground that the can be clicked and walked on, but this is not working. I think everything should work once the areas of the ground are baked. 
-### Fixed 3/11/2020:
+#### Fixed 3/11/2020:
 I just had to lower the radius of the navmesh area before baking. The previous surface area was too small for the radius, so I scaled up the ground and reduced the radius.
 
 ## 3/11/2020
