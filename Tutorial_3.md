@@ -1,6 +1,11 @@
-# Tutorial 3: Randomize the orientation of blocks and set up a correct orientation that can be entered for each block individually in the inspector
+# Tutorial 3: 
+## 1) Randomize the orientation of blocks
 
 
+## 2) Set up a correct orientation that can be entered for each block individually in the inspector
+For this you need to make a new public integer variable before start or update. I called this integer `CorrectCounter`. This integer can then be set to the desired value of 
+
+## The full script:
 ```
  private Collider coll;
 
