@@ -11,7 +11,7 @@ For this you need to make two public booleans before start and update. By making
 
     public int Counter = 0;
     
-    // Public booleans, 1 for the vertical and one for the horizontal position of the block.
+    // Public booleans, one for the vertical and one for the horizontal position of the block.
     public bool verticalCount = true;
     public bool horizontalCount = true;
     
