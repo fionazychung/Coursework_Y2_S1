@@ -14,10 +14,7 @@ For this you need to make two public booleans before start and update. By making
     // Public booleans, 1 for the vertical and one for the horizontal position of the block.
     public bool verticalCount = true;
     public bool horizontalCount = true;
-
-    // Making the variable public allows it to be seen and edited in the Unity inspector.
-    public int CorrectCounter;
-
+    
     // Start is called before the first frame update
     void Start()
     {
