@@ -48,12 +48,9 @@ For this you need to make two public booleans before start and update. By making
         transform.rotation = Quaternion.Euler(0.0f, 0.0f, 90.0f * Counter);
         
         // Depending on what is checked as true, one of the if statements that is correct will come into play.
-        if (verticalCount == true)
+        if (verticalCount == true || horizontalCount == true)
         {
-           // Enter what happens when the block is in the right position, e.g. the puzzle is solved and an area is unlocked (deactive collider).
-        }
-        if (horizontalCount == true)
-        {
+            // Enter what happens when the block is in the right position, e.g. the puzzle is solved and an area is unlocked (deactive collider).
             // Use debug.log to check if the setting of true and false in the inspector works.
             Debug.Log("solved");
         }
