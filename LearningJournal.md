@@ -97,3 +97,7 @@ if (Input.GetMouseButtonDown(0))
         transform.rotation = Quaternion.Euler(0.0f, 0.0f, 90.0f * Counter);
 ```
 
+## 7/11/2020
+I am trying to set up two lists, one that records the vertical blocks and the other records the horizontal blocks. With these lists I can set up a count for the lists, and once the counts are the correct number of blocks, the puzzle will be solved. For some reason the list is not accessible in the other script.
+
+
