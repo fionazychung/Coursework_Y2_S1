@@ -2,8 +2,10 @@
 ### 1) Randomize the orientation of blocks
 To randomize the orientation at the start of the play the line of code must be written in `start`. Making use of the counter, the counter is randomized from a range of 0 to 3. This makes use of `Random.Range`. For `Random.Range(0, 4)` 0 is the starting number and since the last number is excluded, the second number must be set to 4 instead of 3. 
 
-### 2) Set up a correct orientation that can be entered for each block individually in the inspector
-For this you need to make two public booleans before start and update. By making these booleans public, it is then possible to set them to either true of false in the inspector. After this set up two `if statements`, one for the `verticalCount` and one for the `horizontalCount`. Both if statements are set to `true`, so depending on if the block is checked for `verticalCount` or `horizontalCount` as true in the inspector, the puzzle will be solved only when the set conditions are met.
+### 2) Set up a correct orientation that can be entered for each block individually in the inspector and check if the orientation of the block is equal to the winning orientation
+For this you need to make two public booleans before start and update, `setVeritical` and `setHorizontal`. By making these booleans public, it is then possible to set them to either true of false in the inspector. They will control what the correct/winning orientation of the block is. 
+Then set up another pair of booleans, `verticalCount` and `horizontalCount` (these do not need to be public). 
+After this set up an `if` and `if else` statement. These statements take the count values and group them into `verticalCount` or `horizontalCount`. By doing this the next set of `if statements` can check if the block orientation is the same as the set winning orientation. These `if statements` require either the booleans of `setVeritcal` and `verticalCount`, or `setHorizontal` and `horizontalCount` to be equal to true. 
 
 ### The full script:
 ```
@@ -11,9 +13,13 @@ For this you need to make two public booleans before start and update. By making
 
     public int Counter = 0;
     
-    // Public booleans, one for the vertical and one for the horizontal position of the block.
-    public bool verticalCount = true;
-    public bool horizontalCount = true;
+    // Public booleans to set the positions for the block.
+    public bool setVertical;
+    public bool setHorizontal;
+    
+    // Booleans that correspond to the count values.
+    bool verticalCount = false;
+    bool horizontalCount = false;
     
     // Start is called before the first frame update
     void Start()
@@ -47,12 +53,28 @@ For this you need to make two public booleans before start and update. By making
         // This allows the rotation of the block to be randomized by positions of 90, 180, and so on on the Z axis.
         transform.rotation = Quaternion.Euler(0.0f, 0.0f, 90.0f * Counter);
         
-        // Depending on what is checked as true, one of the if statements that is correct will come into play.
-        if (verticalCount == true || horizontalCount == true)
+        // Checks if the block is in a vertical position
+         if (Counter == 0 || Counter == 2)
         {
-            // Enter what happens when the block is in the right position, e.g. the puzzle is solved and an area is unlocked (deactive collider).
-            // Use debug.log to check if the setting of true and false in the inspector works.
-            Debug.Log("solved");
+            // Sets the verticalCount to true and the horizontalCount to false. It does the opposite in else if.
+            verticalCount = true;
+            horizontalCount = false;
+        }
+        // Checks if the block is in a horizontal position
+        else if (Counter == 1 || Counter == 3) 
+        {
+            horizontalCount = true;
+            verticalCount = false; 
+        }
+
+        // The if statements check if what the correct position the block has been set to matches it's current position. 
+        if (verticalCount == true && SetVertical == true)
+        {
+
+        }
+        if (horizontalCount == true && SetHorizontal == true) 
+        {
+
         }
     }
 ```
