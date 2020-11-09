@@ -99,5 +99,5 @@ if (Input.GetMouseButtonDown(0))
 
 ## 7/11/2020
 I am trying to set up two lists, one that records the vertical blocks and the other records the horizontal blocks. With these lists I can set up a count for the lists, and once the counts are the correct number of blocks, the puzzle will be solved. For some reason the list is not accessible in the other script.
-
-
+### Solved 9/11/2020: 
+After setting up the lists as static I can directly call upon the lists by writing `BlockCounter.verticalList`. There is no need to set up a variable.
