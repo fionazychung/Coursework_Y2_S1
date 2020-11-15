@@ -101,3 +101,29 @@ if (Input.GetMouseButtonDown(0))
 I am trying to set up two lists, one that records the vertical blocks and the other records the horizontal blocks. With these lists I can set up a count for the lists, and once the counts are the correct number of blocks, the puzzle will be solved. For some reason the list is not accessible in the other script.
 ### Solved 9/11/2020: 
 After setting up the lists as static I can directly call upon the lists by writing `BlockCounter.verticalList`. There is no need to set up a variable for the script to reference it.
+
+## 15/11/2020
+I am trying to move an object to the position of an empty game object by using the mousebuttondown input. There is nothing wrong with the code in the sense that there are no errors, but it does not do anything. Using raycast I want to check for collision by using tags, so that when a certain area is clicked on, the player will me moved to the empty game objects position. I set the game object positions in the inspector by dragging and dropping the game objects into the slots, and then I set the vector3s equal to the corresponding game objects. I have empty game objects set up with colliders and they have the correct tags. 
+```
+if (coll.Raycast(myRay, out hitInfo, 100.0f))
+            {
+                if (hitInfo.collider.tag == "To1up")
+                {
+                    player.transform.position = floor1;
+                }
+                if (hitInfo.collider.tag == "To2up")
+                {
+                    player.transform.position = floor2;
+                    Debug.Log("hithit");
+                }
+                if (hitInfo.collider.tag == "To1down")
+                {
+                    player.transform.position = floor1;
+                }
+                if (hitInfo.collider.tag == "ToGdown")
+                {
+                    player.transform.position = floorG;
+                }
+            }
+```
+
