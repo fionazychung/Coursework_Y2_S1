@@ -126,4 +126,16 @@ if (coll.Raycast(myRay, out hitInfo, 100.0f))
                 }
             }
 ```
+### Fixed 17/11/2020:
+The problem was solved by changing `coll.Raycast` to `Physics.Raycast`.
+
+## 17/11/2020
+I have a new issue where to link the nav meshes together I can use nav mesh link, which means I don't need to make use of the raycast code one above. 
+I tried to use `navmeshagent.warp`, but warp was not being recognized in the code, so I switched back to using `transform.position`. In order for transform to work I needed to write this in the script:
+```
+myAgent.transform.position = floor1;
+myAgent.enabled = false;
+myAgent.enabled = true;
+```
+Instead of taking the player position it references the navmesh and through that the player can move between navmeshes.
 
