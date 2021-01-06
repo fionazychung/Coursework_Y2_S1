@@ -44,7 +44,7 @@ These `if statements` require either the booleans of `setVeritcal` and `vertical
 
         }
 ```
-When duplicating the blocks inside of Unity in the heirarchy, each one can be individually set to horizontal or vertical. A `Debug.Log("");` can be added within the second set of `if statements` to check that the orientation of the blocks are being identified correctly. 
+When duplicating the blocks inside of Unity in the hierarchy, each one can be individually set to horizontal or vertical. A `Debug.Log("");` can be added within the second set of `if statements` to check that the orientation of the blocks are being identified correctly. 
 
 
 The full script (includes code for the counter and rotation of the block as well):
