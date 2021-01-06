@@ -15,6 +15,7 @@ A reference resolution can now be entered for the canvas. For a high quality ima
 Within the canvas create an empty gameobject and call it `MainMenu`. This game object will hold all the buttons for the main menu and should be sized appropriately. In my case I have four buttons and have set it's size to 1718x2160.
 
 Now right click on the MainMenu gameobject and go to UI, `Button` (or Button - TextMeshPro). Create as many buttons as needed and size them to your liking. 
+Each of the buttons contains a `text` object. The text of the button can be changed within the inspector (e.g. Start, Credits, Quit, etc.).
 
 For the purposes of this tutorial the buttons do not have a game function other than to show the scaling of the screen.
 In order for the buttons to work, a script `using UnityEngine.SceneManagement` would have to be written and attached to the `MainMenu` gameobject. The `MainMenu` gameobject would then have to be dragged into the onclick components of each buttons, werein each button calls on a specific function within the script.
