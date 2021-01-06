@@ -1,13 +1,53 @@
-# Tutorial 3: 
-### 1) Randomize the orientation of blocks
-To randomize the orientation at the start of the play the line of code must be written in `start`. Making use of the counter, the counter is randomized from a range of 0 to 3. This makes use of `Random.Range`. For `Random.Range(0, 4)` 0 is the starting number and since the last number is excluded, the second number must be set to 4 instead of 3. 
+# Tutorial 3: Checking the Orientation of a Rectangular Block
+This requires a script to be attached to an object that is rotated by a counter. In this case the object is being rotated by 90 degrees when the left mouse button is clicked. The gameobject is a cube of where the scale of X is 2, Y is 4 and Z is 1; making the cube a rectangle. The rectangular gameobject is important to this script, as when a rectangle is rotated, it is vertical at both 0 and 180 degrees, and it is horizontal at both 90 and 270 degrees. By making use of the block being rotated by a counter rather than the euler angles, this tutorial sets up code that identifies when the rotated block is in a horizontal or vertical position.
 
-### 2) Set up a correct orientation that can be entered for each block individually in the inspector and check if the orientation of the block is equal to the winning orientation
+#### 1) Randomize the orientation of blocks
+To randomize the orientation at the start of the play the line of code must be written in `start`. 
+Making use of the counter, the counter is randomized from a range of 0 to 3. This makes use of `Random.Range`. 
+For `Random.Range(0, 4)` 0 is the starting number and since the last number is excluded, the second number must be set to 4 instead of 3. 
+```Counter = Random.Range(0, 4);```
+
+#### 2) Set up a correct orientation that can be entered for each block individually in the inspector and check if the orientation of the block is equal to the winning orientation
 For this you need to make two public booleans before start and update, `setVeritical` and `setHorizontal`. By making these booleans public, it is then possible to set them to either true of false in the inspector. They will control what the correct/winning orientation of the block is. 
-Then set up another pair of booleans, `verticalCount` and `horizontalCount` (these do not need to be public). 
-After this set up an `if` and `if else` statement. These statements take the count values and group them into `verticalCount` or `horizontalCount`. By doing this the next set of `if statements` can check if the block orientation is the same as the set winning orientation. These `if statements` require either the booleans of `setVeritcal` and `verticalCount`, or `setHorizontal` and `horizontalCount` to be equal to true. 
+```
+    public bool setVertical;
+    public bool setHorizontal;
+```
 
-### The full script:
+Then set up another pair of booleans, `verticalCount` and `horizontalCount` (these do not need to be public as they are only used in the script itself). 
+```
+    bool verticalCount = false;
+    bool horizontalCount = false;
+```
+
+After this set up an `if` and `if else` statement. These statements take the count values and group them into `verticalCount` or `horizontalCount`. 
+By doing this the next set of `if statements` can check if the block orientation is the same as the set winning orientation. 
+These `if statements` require either the booleans of `setVeritcal` and `verticalCount`, or `setHorizontal` and `horizontalCount` to be equal to true. 
+```
+        if (Counter == 0 || Counter == 2)
+        {
+            verticalCount = true;
+            horizontalCount = false;
+        }
+        else if (Counter == 1 || Counter == 3) 
+        {
+            horizontalCount = true;
+            verticalCount = false; 
+        }
+
+        if (verticalCount == true && SetVertical == true)
+        {
+        
+        }
+        if (horizontalCount == true && SetHorizontal == true) 
+        {
+
+        }
+```
+When duplicating the blocks inside of Unity in the heirarchy, each one can be individually set to horizontal or vertical. A `Debug.Log("");` can be added within the second set of `if statements` to check that the orientation of the blocks are being identified correctly. 
+
+
+The full script (includes code for the counter and rotation of the block as well):
 ```
  private Collider coll;
 
