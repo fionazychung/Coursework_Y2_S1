@@ -1,8 +1,8 @@
 # Tutorial 4: Creating a Main Menu UI that Scales to Screen Size
-This tutorial makes use of the Unity UI system and does not require a script to be written, but requires adjustments to be made within the inspector window of Unity.
+This tutorial makes use of the Unity UI system and does not require a script to be written, but requires adjustments to be made within the hierarchy and inspector tab of Unity.
 
 #### 1) Setting up the Canvas
-Right click within the heirarchy, go to UI, and then select `Panel`. This will automatically create a canvas and event system that is required for the UI to work.
+Right click within the hierarchy, go to UI, and then select `Panel`. This will automatically create a canvas and event system that is required for the UI to work.
 The color of the panel can be adjusted within the image component, found in the inspector tab. 
 For elements (e.g. images, buttons) to show up within the Unity UI they must be within the canvas in the heirarchy.
 
