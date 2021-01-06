@@ -76,5 +76,5 @@ The full script (including the rotation of the block):
                 Counter = 0;
             }
         }
-    }```
+    }
     
