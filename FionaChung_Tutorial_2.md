@@ -45,7 +45,7 @@ to `if (coll.Raycast(ray, out hit, 100.0f))`.
 
 The full script (including the rotation of the block):
 ```
-private Collider coll;
+    private Collider coll;
 
     int Counter = 0;
 
@@ -76,6 +76,5 @@ private Collider coll;
                 Counter = 0;
             }
         }
-    }
-    ```
+    }```
     
