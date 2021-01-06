@@ -1,4 +1,4 @@
-# Tutorial 4: Creating a Main Menu UI that Scales to the Screen Size
+# Tutorial 4: Creating a Main Menu UI that Scales to Screen Size
 This tutorial makes use of the Unity UI system and does not require a script to be written, but requires adjustments to be made within the inspector window of Unity.
 
 #### 1) Setting up the Canvas
